@@ -13,6 +13,7 @@
         <a class="logo">USG</a>
         <nav></nav>
     </header>
+    <p>
     <section class="home">
         <div class="home-img">
             <img src="home.webp" alt="my photo" style="margin-right: 100px;">
