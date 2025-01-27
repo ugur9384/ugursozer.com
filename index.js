@@ -33,3 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startTypingEffect();
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header nav");
+
+    // Toggle navbar visibility on small screens
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active"); // Add/remove 'active' class
+    });
+});
+
