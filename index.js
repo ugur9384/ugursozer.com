@@ -36,7 +36,27 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector("header nav");
+    const navWrapper = document.querySelector("header"); // Assuming the entire nav/header wrapper needs to hide
+    let lastScrollTop = 0;
+
+    // Toggle menu visibility on click
     menuToggle.addEventListener("click", () => {
         nav.classList.toggle("active"); // Add/remove 'active' class
+    });
+
+    // Handle scrolling logic
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        // If scrolling down, hide both the nav links and the menu toggle
+        if (currentScroll > lastScrollTop) {
+            navWrapper.style.transform = "translateY(-100%)"; // Slide up
+            navWrapper.style.transition = "transform 0.3s ease-in-out"; // Smooth hiding
+        } else {
+            // If scrolling up, show both the nav links and the menu toggle
+            navWrapper.style.transform = "translateY(0)"; // Slide back down
+        }
+
+        lastScrollTop = currentScroll; // Update last scroll position
     });
 });
