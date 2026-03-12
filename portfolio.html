@@ -10,8 +10,28 @@
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
+      function Header(){
+        return(
+        <p>there will be a header</p>
+      )}
+      function Projects(){
+        return(
+          <p>there will be a footer</p>
+      )}
+      function About_Me(){
+        return(
+          <p>this part will be about me</p>
+      )
+      }
+      const app=(
+        <>
+          <Header />
+          <About_Me />
+          <Projects/>
+        </>
+      )
       const container = document.querySelector('.portfolio_header');
-      ReactDOM.createRoot(container).render('It is mostly experimental here ');
+      ReactDOM.createRoot(container).render(app);
     </script>
   </body>
 </html>
